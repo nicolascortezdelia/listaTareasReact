@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Subtitulo from './components/Subtitulo';
+import Titulo from './components/Titulo';
+
 
 function App() {
+  //esta es la zona donde va la lógica
+//creo una variable "prueba"
+
+let prueba = 123
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  <section>
+    <Titulo  ></Titulo>
+   {/*<Titulo/>*/}
+   <Subtitulo comision = "comision18i" estado={true} prueba={prueba} /> 
+    <hr />
+  </section>
   );
 }
 
