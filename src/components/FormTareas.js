@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from "react-bootstrap/Button";
 import ListaTareas from './ListaTareas';
@@ -7,8 +7,18 @@ import ListaTareas from './ListaTareas';
 
 const FormTareas = () => {
   //aquí va la lógica
-  const [arregloTareas, setArregloTareas] = useState([]);
+  let tareasLocalStorage = JSON.parse(localStorage.getItem("keylistatareas")) || [];
+  const [arregloTareas, setArregloTareas] = useState(tareasLocalStorage);
   const [tarea, setTarea] = useState("");
+
+
+  //ciclo de vida
+  useEffect(()=>{
+    //toda la lógica que quiero usar en el ciclo de vida
+    //console.log("prueba de ciclo de vida")
+
+    localStorage.setItem("keylistatareas", JSON.stringify(arregloTareas) )
+  },[arregloTareas])
 
   
 
