@@ -24,6 +24,11 @@ const handleSubmit = (e)=>{
 
 }
 
+const borrarTarea = (nombre)=>{
+  let arregloModificado = arregloTareas.filter((item)=>{return item !== nombre})
+  setArregloTareas(arregloModificado);
+}
+
     return (
         <div>
            <Form onSubmit={handleSubmit}>
@@ -34,7 +39,7 @@ const handleSubmit = (e)=>{
     Agregar
   </Button>
   </Form.Group>
-  <ListaTareas stateTareas={arregloTareas}/>
+  <ListaTareas stateTareas={arregloTareas} borrarTarea={borrarTarea}/>
  
   
 </Form> 
